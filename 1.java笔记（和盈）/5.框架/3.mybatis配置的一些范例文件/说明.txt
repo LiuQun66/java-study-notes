@@ -1,0 +1,7 @@
+1.上面的pom.xml只是一个范例，需要的话使用的时候可以复制。
+2.mapper.xml中的内容是mybatis中配置映射文件的约束，这个文件中的内容是每个对应的mapper类型比如UserMapper.xml的文件的头部必不可少的。
+3.Config.xml中的内容则是mybatis配置文件的约束，这是每一个mybatis的xml文件中的头部必不可少的内容，如SqlMapConfig.xml。
+4.SqlMapConfig.xml则是一个范例，需要的话使用可以直接复制，然后修改里面的内容。
+5.CategoryDao.xml也是一个范例，需要的话使用可以直接复制，然后修改里面的内容。
+6.log4j.properties的文件，直接复制就可以，不用修改内容。
+7.context.xml文件，这个文件是在web项目中当要使用JNDI的方式配置数据源时使用，放在war类型的项目的webapp目录下，最好在webapp目录下新建一个META-INF目录，然后将这个放在这里。

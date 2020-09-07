@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #d1{
+            width: 1000px;
+            height: 800px;
+            margin-left: 100px;
+            text-align: center;
+            padding-top: 100px;
+        }
+        #pic1{
+            text-align: center;
+        }
+        .p1{
+        
+            text-align: center;
+            margin: auto;
+            font-size: 26px;
+            padding-top: 3px;
+        }
+        .c1{
+            width: 40px;
+            height: 40px;
+            float: left;
+            display: block;
+            border: 1px solid black;
+            background-color:white;
+            
+            border-radius: 20px;
+            padding: 0;
+            margin:0px 10px 0px 10px; 
+           transform: translate(750px,500px);
+        
+        }
+    </style>
+    <script >
+        var count=0;
+        function fun1(){
+            var a1=document.getElementById("pic1");
+            a1.src=count%3+".jpg";
+            //下面的代码是老师的方法：
+            // var a2=document.getElementsByClassName("c1")[count];
+            // a2.style.backgroundColor="blueviolet";
+            // a2.style.color="white";
+            // document.getElementsByClassName("c1")[(count+2)%3].style.backgroundColor="white";
+            // document.getElementsByClassName("c1")[(count+2)%3].style.color="blueviolet";
+            var a2=document.getElementsByClassName("c1");
+            if(count%3==0){
+                a2[count%3].style.backgroundColor="blueviolet";
+                a2[count%3].style.color="white";
+                a2[(count%3)+1].style.backgroundColor="white";
+                a2[(count%3)+1].style.color="blueviolet";
+                a2[(count%3)+2].style.backgroundColor="white";
+                a2[(count%3)+2].style.color="blueviolet";
+            }else if(count%3==1){
+                a2[(count%3)-1].style.backgroundColor="white";
+                a2[(count%3)-1].style.color="blueviolet";
+                a2[count%3].style.backgroundColor="blueviolet";
+                a2[count%3].style.color="white";
+                a2[(count%3)+1].style.backgroundColor="white";
+                a2[(count%3)+1].style.color="blueviolet";
+            }else{
+                a2[(count%3)-1].style.backgroundColor="white";
+                a2[(count%3)-1].style.color="blueviolet";
+                a2[(count%3)-2].style.backgroundColor="white";
+                a2[(count%3)-2].style.color="blueviolet";
+                a2[count%3].style.backgroundColor="blueviolet";
+                a2[count%3].style.color="white";
+            }
+            count++;
+            if(count==3){
+                count=0;
+            }
+            t=setTimeout("fun1()",1000);
+        }
+    </script>
+</head>
+<body onload="fun1()" >
+    <div id="d1">
+        <img src="0.jpg" alt="" width="800px" height="600px" id="pic1" >
+        
+        <div class="c1" >
+            <p class="p1" >1</p>
+        </div>
+        <div class="c1">
+            <p class="p1">2</p>
+        </div>
+        <div class="c1">
+            <p class="p1">3</p>
+        </div>
+       
+        
+    </div>
+    
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+Collection:
+	List:
+		元素有索引位置,可以存放重复的值
+		ArrayList:
+			底层是数组,有扩容的方法
+			特点是查询快
+		LinkedList:
+			底层是双向链表,多了头尾节点的操作
+			增加删除相对快一些
+		Vector:
+			跟ArrayList相比,Vector是线程安全的
+		Stack:
+			栈,后进先出
+	Set:
+		无序排放,不能存放重复的值
+		HashSet:
+			底层是HashMap.
+			可以存放null
+		TreeSet;
+			底层是TreeMap
+			不能存放null
+			元素存放的顺序是自然顺序,如果存放的是对象时,需要对象所属的那个类实现Comparable接口,或者自定义一个比较器
+Map:
+	元素都是键值对key-value,每一个键只能对应一个值
+	HashMap:
+		key,value都可以为null
+	Hashtable:
+		与HashMap相比是线程安全的
+		key 和value都不能为null
+	TreeMap:
+		key不能存放null
+		元素存放的顺序是key的自然顺序,如果key存放的是对象时,需要对象所属的那个类实现Comparable接口,或者自定义一个比较器
+		

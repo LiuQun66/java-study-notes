@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <!-- 配置自动扫描包：让指定包下的注解生效并由Spring的IOC容器统一管理 -->  
+    <context:component-scan base-package="com.aowin.controller"></context:component-scan>  
+    <!-- 该配置的作用：若是静态资源的请求如.html、.css等则交由默认的Servlet处理，若不是则由DispatcherServlet处理-->
+    <mvc:default-servlet-handler/>
+    <!-- 配置支持注解驱动 -->
+    <mvc:annotation-driven>
+    	<!-- 设置编码格式：这里使用的时jackson -->
+	   <mvc:message-converters register-defaults="true">
+	       <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+	           <constructor-arg value="UTF-8"/>
+	       </bean>
+	       <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+	           <property name="objectMapper">
+	               <bean class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean">
+	                   <property name="failOnEmptyBeans" value="false"/>
+	               </bean>
+	           </property>
+	       </bean>
+	   </mvc:message-converters>
+	</mvc:annotation-driven>    
+    <!-- 视图解析器 -->
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    	<property name="prefix" value="/WEB-INF/jsp/"></property>
+    	<property name="suffix" value=".jsp"></property>
+    </bean>
+</beans>

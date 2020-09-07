@@ -1,0 +1,6 @@
+1.pom.xml文件：这存放的是ssm整合过程中一般需要的依赖信息。
+2.database.properties文件：存放的是连接数据库的四个基本信息。
+3.spring-dao-config.xml文件：这存放的是mybatis和spring整合要配置的内容。
+4.spring-service-config.xml文件：这对应的是service层要使用的配置内容。
+5.spring-mvc-config.xml文件：这对应的是controller层要使用的配置内容，即spring-mvc的配置内容。
+6.application-config.xml文件：这个文件是将spring-dao-config.xml文件、spring-service-config.xml文件、spring-mvc-config.xml文件关联起来。

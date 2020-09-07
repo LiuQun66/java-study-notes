@@ -1,0 +1,19 @@
+
+
+　通过控制面版-〉管理工具---》服务，停掉所有ORACLE服务
+
+　打开注册表（REGEDIT命令），删除HKEY_LOCAL_MACHINE\SOFTWARE\ORACLE
+
+　打开注册表中的 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services删除以ORACLE开头的所有服务
+
+　删除HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Application下以ORACLE开头的所有服务
+    
+  重启电脑
+
+　删除C:\Program Files\Oracle文件夹
+ 
+  删除D:\Program Files\Oracle文件夹 (假设oracle安装在D盘)
+
+　重新启动机器就ok了
+
+　

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #left1,#right1{
+            width:500px;
+            height:600px;
+          
+            float: left;
+        }
+        #d1{
+            width:60%;
+            height: 60%;
+            margin: auto;
+            display: none;
+        }
+    </style>
+    <script>
+      
+        function add(obj){
+            var te=document.getElementsByClassName("te");
+            var ta=document.getElementById("ta").children[0];
+            var tr=document.createElement("tr");
+            var th=document.getElementsByTagName("th");
+            var d1=document.getElementById("d1");
+            if(obj.value=="添加一行"){
+                d1.style.display='block';
+                obj.value="完成";
+                obj.setAttribute("disabled","disabled");
+            }else{
+                d1.style.display='none';
+                obj.value="添加一行";
+                for(var i=0;i<th.length;i++){
+                    var td=document.createElement("td");
+                    if(i==th.length-1){
+                        td.innerHTML="<input type='button' value='删除' onclick='del(this)'>";
+                    }else{
+                        td.innerHTML=te[i].value;
+                        te[i].value="";
+                        
+                    }
+                    tr.appendChild(td);
+                }
+                ta.appendChild(tr);
+            }      
+        }
+        //table-->tablesection-->tr-->td
+        function del(obj){
+            var ta=document.getElementById("ta").children[0];
+            ta.removeChild(obj.parentNode.parentNode);
+        }
+        function fun1(obj){
+            var btn=document.getElementById("btn");
+            if(obj.value!="" && obj.value!=null && obj.value!=undefined){
+                btn.removeAttribute("disabled");
+            }else{
+                btn.setAttribute("disabled","disabled");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="left1">
+            <input type="button" value="添加一行" id="btn" onclick="add(this)"> 
+            <div id="d1">
+                <!-- 当绑定的函数需要使用当前标签对象时,可以使用this -->
+                编号: <input type="text" class="te" onblur="fun1(this)"> <font color="red">*</font> <br><br>
+                姓名: <input type="text" class="te"> <br><br>
+                地址: <input type="text" class="te"> 
+            </div>
+    </div>
+       
+    <div id=right1>
+            <table border="1" id="ta" width="500px" style="border-collapse: collapse; text-align: center; margin: auto;" >
+                    <tr>
+                        <th>编号</th>
+                        <th>姓名</th>
+                        <th>地址</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr>
+                        <td>1001</td>
+                        <td>1001</td>
+                        <td>1001</td>
+                        <td> <input type="button" value="删除" onclick="del(this)"> </td>
+                    </tr>
+                </table>
+    </div>
+</body>
+</html>

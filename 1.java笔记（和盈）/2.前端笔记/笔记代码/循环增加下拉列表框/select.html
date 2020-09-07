@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script type="text/javascript">
+    function creatYearAndMonth(){
+        var years=document.getElementById("year");
+        var this_year=new Date().getFullYear();
+        for(var i=this_year-5;i<=this_year+5;i++){
+            var option_s=document.createElement("option");
+             option_s.innerHTML=i;//设置option的值：法一
+            years.add(option_s);
+        }
+        years.value=2020;//设置select中选中的值(2020)：法一
+        var months=document.getElementById("month");
+        var this_month=new Date().getMonth;//注意月份是从0~11
+        for(var j=1;j<=12;j++){
+            var monthOption=document.createElement("option");
+            monthOption.text=j;//设置option的值：法二
+            months.add(monthOption); 
+        }
+ //    option中的索引号也是从0开始，因此当前月所对应的索引号正好是this_month的值
+        months.selectedIndex=this_month;//设置select中选中的值(当前月)：法二 
+        createDay();//这里不能少，不然一进入页面日期就不会创建，是空的。
+    }
+    function createDay(){
+        var days=document.getElementById("day");
+        days.options.length=0;
+        var this_day=new Date().getDate();
+        var dayNum=getDay();
+        for(var x=1;x<=dayNum;x++){
+            dayOption=document.createElement("option");
+            dayOption.text=x;
+            days.add(dayOption);
+        }
+         days.value=this_day;
+    }
+    function getDay(){
+        var years=document.getElementById("year");
+        var year_selected=years.options[years.selectedIndex].text;
+        var months=document.getElementById("month");
+        var month_selected=months.options[months.selectedIndex].text;//获得下拉列表中选中的值。
+        var m=parseInt(month_selected);
+        switch(m){
+            case 1:case 3:case 5:
+            case 7:case 8:case 10:
+            case 12: return 31;
+            case 2:
+                if(year_selected%400==0||year_selected%4==0&&year_selected%100!=0)
+                    return 29;
+                else return 28;
+            case 4:case 6:case 9:case 11:
+                return 30;
+        }
+    }
+</script>
+<body onload="creatYearAndMonth()">
+    <form action="" >
+        <select id="year" onchange="createDay()"></select>年
+        <select id="month"onchange="createDay()"></select>月
+        <select id="day"></select>日
+    </form>
+</body>
+</html>

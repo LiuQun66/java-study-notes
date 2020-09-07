@@ -1,0 +1,36 @@
+#div_{
+    width: 1000px;
+    height: 300px;
+    border: 1px solid black;
+    margin: auto;
+}
+#div_1{
+    width: 40%;
+    height: 100%;
+    border: 1px solid black;
+    float: left;
+    display: block;
+}
+#div_1div{
+    width: 70%;
+    height: 60%;
+    border: 1px solid black;
+    margin: auto;
+    display: none;
+}
+#div_2{
+    width: 58%;
+    height: 100%;
+    border: 1px solid black;
+    float: left;
+    display: block;
+}
+#div_2table{
+    /* border: black 1px solid; */
+    width: 80%;
+    height:auto;
+    margin: auto;
+    text-align: center;
+    border-collapse: collapse;
+    margin-top: 30px;
+}

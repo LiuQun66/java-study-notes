@@ -1,0 +1,1 @@
+这两个文件是用来在Eclipse中编写mybatis的主配置文件和映射配置文件时有提示功能的。这两个文件要在Eclipse-->Windows-->preferences-->xml-->xml catelog中引入。

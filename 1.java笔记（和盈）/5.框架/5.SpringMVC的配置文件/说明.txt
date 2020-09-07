@@ -1,0 +1,2 @@
+1.web.xml文件中的内容是SpringMVC中常用的配置，这配置了前端控制器和SpringMVC自身的编码过滤器
+2.SpringMVC-context.xml：这个是SpringMVC使用注解方式要进行的配置范例。

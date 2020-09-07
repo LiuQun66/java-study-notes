@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 上面是mybatis中的mapper的xml的约束 -->
+<mapper namespace="com.aowin.dao.CategoryDao">
+	<!-- namespace属性的值对应的是相应的dao接口的全名称 -->
+		<!-- select标签中写对应的查询sql语句 -->
+		<!-- id属性的值是对应的类中的方法名称，必须一致 -->
+		<!-- 执行完下面的sql语句会将结果放到一个List集合中 -->
+		<!-- resultType则是表示List集合中的类型是什么 -->
+	<select id="findAll" resultType="com.aowin.model.Category">
+		select * from Category
+	</select>
+</mapper>

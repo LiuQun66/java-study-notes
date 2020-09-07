@@ -1,0 +1,77 @@
+1.系统表
+      ORACLE数据库的系统参数都存储在数据库中，可以通过SQLPLUS，以用户SYSYTEM进行查询。几个重要的表或者视图如下：
+
+      v$controlfile：控制文件的信息；
+      v$datafile：数据文件的信息；
+      v$log：日志文件的信息；
+      v$process：处理器的信息；
+      v$session：会话信息；
+      v$transaction：事务信息；
+      v$resource：资源信息；
+      v$sga：系统全局区的信息。
+
+
+  上面的视图名中的‘v$’,只是视图名字中的字符。类似于上面的视图或表还有很多，位于：
+  $ORACLE_HOME/RDBMS/ADMIN/CATALOG.SQL文件中。
+
+  这些视图或表可以在SQLPLUS中用SELECT语句进行查询。
+
+2.数据字典视图
+     dba_*   user_*   all_*
+表和列
+    DBA_TABLES、ALL_TABLES和USER_TABLES显示了有关数据库表的一般信息。
+
+    DBA_TAB_COLUMNS、ALL_TAB_COLUMNS和USER_TAB_COLUMNS显示了每个数据库表的列的信息。
+
+    注意：DBA_OBJECTS、ALL_OBJECTS和USER_OBJECTS显示了模式对象的信息，包括表。
+
+
+完整性约束
+    DBA_CONSTRAINTS、ALL_CONSTRAINTS和USER_CONSTRAINSTS显示有关约束的一般信息。
+
+    DBA_CONS_COLUMNS、ALL_CONS_COLUMNS和USER_CONS_COLUMNS显示有关列的相关约束的一般信息。
+
+
+视图
+    DBA_VIEWS、ALL_VIEWS和USER_VIEWS。
+
+    注意：DBA_OBJECTS、ALL_OBJECTS和USER_OBJECTS显示了模式对象的信息，包括视图。
+
+
+序列
+    DBA_SEQUENCES、ALL_SEQUENCES和USER_SEQUENCES。
+
+    注意：DBA_OBJECTS、ALL_OBJECTS和USER_OBJECTS显示了模式对象的信息，包括序列。
+
+同义词
+    DBA_SYNONYMS、ALL_SYNONYMS和USER_SYNONYMS。
+
+    注意：DBA_OBJECTS、ALL_OBJECTS和USER_OBJECTS显示了模式对象的信息，包括同义词。
+
+索引
+    DBA_INDEXS、ALL_INDEXS、USER_INDEXS、DBA_IND_COLUMNS、ALL_IND_COLUMNS和USER_IND_COLUMNS。
+
+用户
+    DBA_USERS。
+
+角色
+    DBA_ROLES。
+
+表空间定额
+    DBA_TS_QUOTAS。
+
+配置表
+    DBA_PROFILES。
+
+表空间
+    DBA_TABLESPACES。
+
+数据文件
+    DBA_DATA_FILES。
+
+段
+    DBA_SEGMENTS、USER_SEGMENT。
+
+回滚段
+    DBA_ROLLBACK_SEGS、V$ROLLNAME、V$ROLLSTAT。
+

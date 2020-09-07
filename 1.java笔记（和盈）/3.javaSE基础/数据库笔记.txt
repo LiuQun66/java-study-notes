@@ -1,0 +1,98 @@
+ 数据库：计算机系统中存放和管理数据的系统，在指定数据库中，数据是以表的形式存放的，表的每一列代表属性，每一行代表一条记录，
+	对应着一个实体，想要找到某一条记录，需要唯一标识（表示这一条记录），这个标识就叫做主键（qq号，学号）,特点:不能为空,不能重复
+
+
+
+sql:不区分大小写，用分号结束
+	数据库中的desc是关键字，表的表名、列名都不能和关键字重复。
+	DDL:数据定义语言：针对于数据库来说的语言
+		1.查询当前所有的数据库：
+			SHOW DATABASES;
+		2.新建一个数据库：
+			CREATE DATABASE aowin（数据库名）;
+		3.删除数据库:
+			DROP DATABASE aowin（数据库名）;
+		4.使用数据库：
+			USE TEST;(分号可以省略)
+		5.查看数据库中所有的表格：
+			SHOW TABLES;(前提条件，使用某个数据库)
+		6.在指定数据库中建表：
+			CREATE TABLE STUDNET
+				(	ID INT PRIMARY KEY,
+					NAME VARCHAR(20) NOT NULL,
+					SCORE DOUBLE(5,2)
+				);
+			not null:不允许为空
+			//字符串可以用char和varchar来表示，区别：
+			char:固定长，如果长度不够会用空格来补齐
+			varchar:可变长，最大长度为规定的长度
+			DOUBLE(5,2):代表整体长度为5,小数保留两位
+数据库中判断相等用一个等于号就可以
+		7.删除表：
+			DROP TABLE STUDENT(表名);
+
+		8.查看表结构：
+			DESC STUDENT(表名);
+		9.修改表结构：
+			只修改类型，不修改名：
+			ALTER TABLE STUDENT MODIFY NAME(指定列名) CHAR(20);
+			修改类型或者修改名：
+			ALTER TABLE STUDENT CHANGE NAME(指定旧列名) SEX(新列名) VARCHAR(20) ;
+			增加列：
+			ALTER TABLE STUDENT ADD COLUMN NAME VARCHAR(20) NOT NULL;
+			删除列：
+			ALTER TABLE STUDENT DROP COLUMN NAME;
+
+	DML:数据操作语言：增删改查
+		增加：
+			插入所有属性的数据：//into在mysql中可以省略，字符串用单引号和双引号都可以
+				INSERT INTO STUDENT VALUES(1001,"男",59.9);
+			插入指定属性的数据：当属性是默认时必须要赋值.
+				INSERT INTO STUDENT(ID,SEX) VALUES(1003,'女');
+		删除：
+			delete  from student where id=1001;
+			DELETE FROM STUDENT WHERE SEX='男' AND SCORE=59.9;
+ 			DELETE FROM STUDENT WHERE SEX='男' OR SCORE IS NULL;//用is null来判断是否为空
+			DELETE FROM STUDENT WHERE SCORE IS NOT NULL;//删除不为空的
+			DELETE FROM STUDENT WHERE SEX!='男'//不等于男
+		r
+		修改： 	
+			UPDATE STUDENT SET SEX='女' WHERE ID=1001;//指定条件修改，将id=1001的性别修改成女
+			UPDATE STUDENT SET SEX='女',SCORE =60 WHERE ID=1001;//修改多个条件，用逗号分割
+
+		查询：	
+			SELECT * FROM STUDENT;//查询表中所有数据, * 代表所有属性
+			SELECT * FROM STUDENT WHERE ID=1001;
+			SELECT SEX,SCORE FROM STUDENT WHERE ID=1001;//查看指定列信息，用逗号分隔
+			SELECT * FROM STUDENT WHERE SEX='女' AND SCORE >59;//查看性别是女同时分数大于59的所有信息
+			
+			BETWEEN... AND...包含边界值，NOT BETWEEN... AND...
+			select * FROM STUDENT WHERE SCORE BETWEEN 45 AND 60;//在45和60之间
+			
+			模糊查询：
+			% ： 有n个任意字符
+			_：只能有一个任意字符
+			SELECT * FROM STUDENT WHERE ID LIKE '%10%';
+			SELECT * FROM STUDENT WHERE ID LIKE '_00_';
+
+
+			排序：order by
+			select * from student order by score;  //不写排序方式时，默认升序  asc
+			select * from student order by score desc;//降序
+			排序时,null 看作是最小的
+
+		组函数：
+			MAX(指定列名);	SELECT MAX(SCORE) FORM STUDENT; 分数的最大值
+			MIN(指定列名);	SELECT MIN(SCORE) FROM STUDENT; 分数的最小值
+			AVG(指定列名); 	SELECT AVG(SCORE) FROM STUDENT; 分数的平均值
+			SUM(指定列名);	SELECT SUM(SCORE) FROM STUDENT;分数的和
+			COUNT(指定列名); 当前列不为null的行数
+			COUNT(*):查询当前表中的数据的行数
+
+		子查询：
+			一个查询结果作为另一个查询语句的条件
+			
+			查询分数大于平均分的所有信息
+			SELECT * FROM STUDENT WHERE SCORE>
+				(SELECT AVG(SCORE) FROM STUDENT);
+

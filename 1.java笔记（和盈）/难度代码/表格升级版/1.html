@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="1.1.css">
+    <script src="1.1.js"></script>
+</head>
+<body>
+    <div id="div_">
+        <div id="div_1">
+            <form action="">
+                <input type="button" value="添加一行" id="div_1input" onclick="addTableTr(this)">
+            </form><br>
+            <div id="div_1div">
+                编号：<input type="text" class="leftTexts" onblur="addRight()"><span style="color: red;">*</span><br><br>
+                姓名：<input type="text" class="leftTexts"><br><br>
+                地址：<input type="text" class="leftTexts">
+            </div>
+        </div>
+        <div id="div_2">
+            <table id="div_2table" border="1px">
+                <tr>
+                    <th>编号</th>
+                    <th>姓名</th>
+                    <th>地址</th>
+                    <th>操作</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

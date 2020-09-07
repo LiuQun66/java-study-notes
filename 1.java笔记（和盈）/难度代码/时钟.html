@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function time8(){
+            var date8=new Date();
+            var h=date8.getHours();
+            var m=date8.getMinutes();
+            var s=date8.getSeconds();
+            h=checkTime8(h);
+            m=checkTime8(m);
+            s=checkTime8(s);
+            document.getElementById("div8").innerHTML=h+":"+m+":"+s;
+            var t=setTimeout("time8()",500);
+        }
+        function checkTime8(i){
+            if(i<10){
+                i="0"+i;
+            }
+            return i;
+        }
+    </script>
+</head>
+<body onload="time8()">
+    <div id="div8"></div>
+</body>
+</html>

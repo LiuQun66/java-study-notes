@@ -1,0 +1,141 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.aowin</groupId>
+  <artifactId>ssm1</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  				
+  <properties>
+  			<!-- 配置jdk版本为1.8 -->
+ 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+ 	<maven.compiler.source>1.8</maven.compiler.source>
+ 	<maven.compiler.target>1.8</maven.compiler.target>
+ 			<!-- 自定义标签统一依赖的版本号 -->
+ 	<spring.version>5.2.6.RELEASE</spring.version>
+  </properties>
+  <dependencies>
+  			<!-- mybatis依赖 -->
+  	<dependency>
+  		<groupId>org.mybatis</groupId>
+  		<artifactId>mybatis</artifactId>
+  		<version>3.5.3</version>
+  	</dependency>
+  			<!-- mybatis整合spring需导入的依赖 -->
+  	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis-spring</artifactId>
+	    <version>2.0.3</version>
+	</dependency>
+  			<!-- 数据库驱动依赖 -->
+  	<dependency>
+  		<groupId>mysql</groupId>
+  		<artifactId>mysql-connector-java</artifactId>
+  		<version>5.1.48</version>
+  	</dependency>
+  			<!-- 数据源依赖：使用的是dbcp -->
+  	<dependency>
+	    <groupId>commons-dbcp</groupId>
+	    <artifactId>commons-dbcp</artifactId>
+	    <version>1.4</version>
+	</dependency>
+  			<!-- Servlet依赖 -->
+  	<dependency>
+  		<groupId>javax.servlet</groupId>
+  		<artifactId>javax.servlet-api</artifactId>
+  		<version>4.0.1</version>
+  		<scope>provided</scope>
+  	</dependency>
+  			<!-- jsp依赖 -->
+  	<dependency>
+  		<groupId>javax.servlet.jsp</groupId>
+  		<artifactId>jsp-api</artifactId>
+  		<version>2.2</version>
+  		<scope>provided</scope>
+  	</dependency>
+  			<!-- jsp页面使用jstl需要的依赖 -->
+  	<dependency>
+  		<groupId>javax.servlet.jsp.jstl</groupId>
+  		<artifactId>jstl</artifactId>
+  		<version>1.2</version>
+  		<scope>provided</scope>
+  	</dependency>
+  			<!-- SpringMVC导入的依赖 -->
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-webmvc</artifactId>
+  		<version>${spring.version}</version>
+  	</dependency>
+  			<!-- Spring的jdbc依赖 -->
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-jdbc</artifactId>
+  		<version>${spring.version}</version>
+  	</dependency>
+  			<!-- Spring的事务管理依赖 -->
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-tx</artifactId>
+  		<version>${spring.version}</version>
+  	</dependency>
+  			<!---Spring中使用AOP-->
+  	<dependency>
+  		<groupId>org.aspectj</groupId>
+  		<artifactId>aspectjweaver</artifactId>
+  		<version>1.9.4</version>
+  	</dependency>
+  			<!-- lombok的依赖 -->
+  	<dependency>
+  		<groupId>org.projectlombok</groupId>
+  		<artifactId>lombok</artifactId>
+  		<version>1.18.10</version>
+  	</dependency>
+  			<!-- 解析json数据的依赖：这里使用的是jackson -->
+  	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+	    <version>2.11.0</version>
+	</dependency>
+			<!-- Junit的依赖 -->
+	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.12</version>
+  		<scope>test</scope>
+  	</dependency>
+			<!-- Spring整合Junit需要的依赖 -->
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-test</artifactId>
+  		<version>${spring.version}</version>
+  		<scope>test</scope>
+  	</dependency>
+			<!-- log4j记录日志的依赖 -->
+  	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-log4j12</artifactId>
+	    <version>1.7.30</version>
+	    <scope>test</scope>
+	</dependency>
+  </dependencies>
+  			<!-- 解决资源过滤问题 -->
+  <build>
+  	<resources>
+  		<resource>
+  			<directory>src/main/java</directory>
+  			<includes>
+  				<include>**/*.properties</include>
+  				<include>**/*.xml</include>
+  			</includes>
+  			<filtering>false</filtering>
+  		</resource>
+  		<resource>
+  			<directory>src/main/resources</directory>
+  			<includes>
+  				<include>**/*.properties</include>
+  				<include>**/*.xml</include>
+  			</includes>
+  			<filtering>false</filtering>
+  		</resource>
+  	</resources>
+  </build>
+</project>

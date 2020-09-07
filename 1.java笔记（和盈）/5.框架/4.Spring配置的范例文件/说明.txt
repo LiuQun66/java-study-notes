@@ -1,0 +1,1 @@
+1.Spring-beans.xml文件中的内容是使用spring或者springmvc在xml中的约束。

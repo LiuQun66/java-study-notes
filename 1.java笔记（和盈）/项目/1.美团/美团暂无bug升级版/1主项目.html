@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="2style.css"><!--CSS样式的引用-->
+    <script src="3javascript.js"></script>
+    <!-- <script src="试错.js"></script> -->
+    
+</head>
+<body>
+    <div id="box">
+        <div id="box_1">
+           <div id="box_1left">
+               <img src="img/headerleft.png" alt="" style="text-align: center;margin: auto;width: 290px;height: 90px;padding-top: 20px;">
+            </div>
+           <div id="box_1right">
+                <img src="img/header1.png" alt="" style="text-align: center;margin: auto;width: 590px;height: 80px;padding-top: 33px;">
+           </div>
+        </div>
+        <div id="box_2">
+            <h3 id="htext" onclick="add_shopping()">我的购物车<span style="color: black;">(<span id="htext_1" style="color: red;">0</span>)</span></h3>
+        </div>
+        <div id="box_3">
+            <div id="box_3top">
+                <div id="box_3top1">
+                    <div id="box_3top1T">
+                        <img src="img/1.jpg" alt=""style="text-align: center;margin: auto;width: 215px;height: 128px;">
+                    </div>
+                    <div id="box_3top1B">
+                        <table class="box_3tab" style="border-collapse: collapse;margin: auto;width: 215px;height: 128px;">
+                            <tr>
+                                <td colspan="2" style="text-align: left;">A米汉堡</td>
+                                <td style="text-align: right;"><span class="price">16</span>元/份</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" style="text-align: right;"><span style="color:#DA9222 ;">月销8888单</span></td>
+                            </tr>
+                            <tr style="text-align: center;">
+                                <td>起送￥10</td>
+                                <td>免费配送</td>
+                                <td>45分钟</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" style="text-align: right;">
+                                    <form action="" id="form_1">
+                                        <input type="button" value=" 加入购物车" onclick="add_btn(this)">
+                                        <!-- <input type="checkbox" value="禁止此页再显示对话框"> -->
+                                    </form>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="box_3top2">
+                    <div id="box_3top2T">
+                        <img src="img/2.jpg" alt=""style="text-align: center;margin: auto;width: 215px;height: 128px;">
+                    </div>
+                    <div id="box_3top2B">
+                        <table class="box_3tab" style="border-collapse: collapse;margin: auto;width: 215px;height: 128px;">
+                            <tr>
+                                 <td colspan="2" style="text-align: left;">杨记小厨</td>
+                                <td style="text-align: right;"><span class="price">17.5</span>元/份</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" style="text-align: right;"><span style="color:#DA9222 ;">月销8888单</span></td>
+                            </tr>
+                            <tr style="text-align: center;">
+                                <td>起送￥10</td>
+                                <td>免费配送</td>
+                                <td>45分钟</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" style="text-align: right;">
+                                    <form action="" id="form_1">
+                                        <input type="button" value=" 加入购物车" onclick="add_btn(this)">
+                                        <!-- <input type="checkbox" value="禁止此页再显示对话框"> -->
+                                    </form>
+                                </td>
+                            </tr>
+                        </table>      
+                    </div>
+                </div>
+                <div id="box_3top3">
+                    <div id="box_3top3T">
+                        <img src="img/3.jpg" alt=""style="text-align: center;margin: auto;width: 215px;height: 128px;">
+                    </div>
+                    <div id="box_3top3B">
+                        <table class="box_3tab" style="border-collapse: collapse;margin: auto;width: 215px;height: 128px;">
+                            <tr>
+                                <td colspan="2" style="text-align: left;">黄焖鸡米饭</td>
+                                <td style="text-align: right;"><span class="price">18</span>元/份</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" style="text-align: right;"><span style="color:#DA9222 ;">月销8888单</span></td>
+                            </tr>
+                            <tr style="text-align: center;">
+                                <td>起送￥10</td>
+                                <td>免费配送</td>
+                                <td>45分钟</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" style="text-align: right;">
+                                    <form action="" id="form_1">
+                                        <input type="button" value=" 加入购物车" onclick="add_btn(this)">
+                                        <!-- <input type="checkbox" value="禁止此页再显示对话框"> -->
+                                    </form>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="box_3top4">
+                    <div id="box_3top4T">
+                        <img src="img/4.jpg" alt=""style="text-align: center;margin: auto;width: 215px;height: 128px;">
+                    </div>
+                    <div id="box_3top4B">
+                        <table class="box_3tab"style="border-collapse: collapse;margin: auto;width: 215px;height: 128px;">
+                            <tr>
+                                <td colspan="2" style="text-align: left;">烤肉拌饭</td>
+                                <td style="text-align: right;"><span class="price">18</span>元/份</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" style="text-align: right;"><span style="color:#DA9222 ;">月销8888单</span></td>
+                            </tr>
+                            <tr style="text-align: center;">
+                                <td>起送￥10</td>
+                                <td>免费配送</td>
+                                <td>45分钟</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" style="text-align: right;">
+                                    <form action="" id="form_1">
+                                        <input type="button" value=" 加入购物车" onclick="add_btn(this)">
+                                        <!-- <input type="checkbox" value="禁止此页再显示对话框"> -->
+                                    </form>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="box_3bottom">
+                <div id="box_3bottom1">
+                    <div id="box_3bottom1T">
+                        <img src="img/5.jpg" alt=""style="text-align: center;margin: auto;width: 215px;height: 128px;">
+                    </div>
+                    <div id="box_3bottom1B">
+                        <table class="box_3tab"style="border-collapse: collapse;margin: auto;width: 215px;height: 128px;">
+                            <tr>
+                                <td colspan="2" style="text-align: left;">有名堂小炒</td>
+                                <td style="text-align: right;"><span class="price">14</span>元/份</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" style="text-align: right;"><span style="color:#DA9222 ;">月销8888单</span></td>
+                            </tr>
+                            <tr style="text-align: center;">
+                                <td>起送￥10</td>
+                                <td>免费配送</td>
+                                <td>45分钟</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" style="text-align: right;">
+                                    <form action="" id="form_1">
+                                        <input type="button" value=" 加入购物车" onclick="add_btn(this)">
+                                        <!-- <input type="checkbox" value="禁止此页再显示对话框"> -->
+                                    </form>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="box_3bottom2">
+                    <div id="box_3bottom2T">
+                        <img src="img/6.jpg" alt=""style="text-align: center;margin: auto;width: 215px;height: 128px;">
+                    </div>
+                    <div id="box_3bottom2B">
+                        <table class="box_3tab"style="border-collapse: collapse;margin: auto;width: 215px;height: 128px;">
+                            <tr>
+                                <td colspan="2" style="text-align: left;">翔仔湾</td>
+                                <td style="text-align: right;"><span class="price">20</span>元/份</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" style="text-align: right;"><span style="color:#DA9222 ;">月销8888单</span></td>
+                            </tr>
+                            <tr style="text-align: center;">
+                                <td>起送￥10</td>
+                                <td>免费配送</td>
+                                <td>45分钟</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" style="text-align: right;">
+                                    <form action="" id="form_1">
+                                        <input type="button" value=" 加入购物车" onclick="add_btn(this)">
+                                        <!-- <input type="checkbox" value="禁止此页再显示对话框"> -->
+                                    </form>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="box_3bottom3">
+                    <div id="box_3bottom3T">
+                        <img src="img/7.jpg" alt=""style="text-align: center;margin: auto;width: 215px;height: 128px;">
+                    </div>
+                    <div id="box_3bottom3B">
+                        <table class="box_3tab" style="border-collapse: collapse;margin: auto;width: 215px;height: 128px;">
+                            <tr>
+                                <td colspan="2" style="text-align: left;">食尚便当</td>
+                                <td style="text-align: right;"><span class="price">21</span>元/份</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" style="text-align: right;"><span style="color:#DA9222 ;">月销8888单</span></td>
+                            </tr>
+                            <tr style="text-align: center;">
+                                <td>起送￥10</td>
+                                <td>免费配送</td>
+                                <td>45分钟</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" style="text-align: right;">
+                                    <form action="" id="form_1">
+                                        <input type="button" value=" 加入购物车" onclick="add_btn(this)">
+                                        <!-- <input type="checkbox" value="禁止此页再显示对话框"> -->
+                                    </form>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="box_3bottom4">
+                    <div id="box_3bottom4T">
+                        <img src="img/8.jpg" alt=""style="text-align: center;margin: auto;width: 215px;height: 128px;">
+                    </div>
+                    <div id="box_3bottom4B">
+                        <table class="box_3tab" style="border-collapse: collapse;margin: auto;width: 215px;height: 128px;">
+                            <tr>
+                                <td colspan="2" style="text-align: left;">格子那只水饺</td>
+                                <td style="text-align: right;"><span class="price">13</span>元/份</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" style="text-align: right;"><span style="color:#DA9222 ;">月销8888单</span></td>
+                            </tr>
+                            <tr style="text-align: center;">
+                                <td>起送￥10</td>
+                                <td>免费配送</td>
+                                <td>45分钟</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" style="text-align: right;">
+                                    <form action="" id="form_1">
+                                        <input type="button" value=" 加入购物车" onclick="add_btn(this)">
+                                        <!-- <input type="checkbox" value="禁止此页再显示对话框"> -->
+                                    </form>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="box_4">
+            <div id="box_4top">
+                <table id="box_4top_tab" >
+                    <tr>
+                        <th class="c_th">
+                            <form action="">
+                                全选<input type="checkbox" onclick="selectAll(this)" id="select_all">
+                            </form>
+                        </th>
+                        <th class="c_th">菜品</th>
+                        <th class="c_th">价格(元/份)</th>
+                        <th class="c_th">操作</th>
+                    </tr>
+                </table>
+                <hr style="width: 900px;text-align: center;font-size: larger;">
+                <form action="" >
+                    <input type="button" value="全部删除" onclick="delAll()" id="box_4top_form">
+                    <span id="box_4top_span">合计￥<span id="box_4top_span2">0</span><input type="button" value="结算" id="box_4top_btn" onclick="spend_money()"></span>
+                </form>
+                <div id="box_4topBottom">
+                    <p style="color: red;font-size: 40px;text-align: center;">购物车空了</p>
+                </div>
+                <p id="box_4top_p" onclick="continue_shopping()">继续任性点餐</p>
+                
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

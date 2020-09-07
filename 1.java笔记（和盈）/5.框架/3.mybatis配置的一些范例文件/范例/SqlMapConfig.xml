@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 上面是mybatis对应的config的xml的约束 -->
+<!-- mybatis的主配置文件 -->
+<configuration>
+	<!-- 环境配置 -->
+	<environments default="mysql">
+		<!-- 配置mysql的环境 -->
+		<environment id="mysql">
+			<!-- 配置事物的类型 -->
+			<transactionManager type="JDBC"></transactionManager>
+			<!-- 配置数据源(连接池) -->
+			<dataSource type="POOLED">
+				<!-- 配置数据源的四个基本信息 -->
+			  <property name="driver" value="com.mysql.jdbc.Driver"/>
+			  <property name="url" value="jdbc:mysql://localhost:3306/scmdb"/>
+			  <property name="username" value="root"/>
+			  <property name="password" value="LQ3217103676"/>
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- 配置指定映射配置文件的位置， 映射配置文件指的是每个Dao独立的配置文件-->
+	<mappers>
+		<!-- 如果采用的是xml的方式，则使用resource属性指定xml文件的位置 -->
+		<!-- 如果是采用注解的方式配置的话，采用class属性指定被注解的dao接口的全名称 -->
+		<mapper resource="com/aowin/mapper/CategoryDaoMapper.xml" />
+	</mappers>
+</configuration>

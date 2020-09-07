@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx
+        https://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/mvc
+        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	
+</beans>
+	<!--spring-beans的约束：当要将bean对象注入到spring容器中时要使用这个约束-->
+	<!--spring-context的约束：当使用注解方式将bean对象注入到spring容器中，要在xml中配置扫描的包，则要使用这个约束-->
+	<!--spring-aop的约束：当要使用spring中的AOP时，需要使用这个约束-->
+	<!--spring-tx的约束：当要使用spring中自己的事务管理器时，要使用这个约束，同时还要使用spring-aop的约束，因为spring的事务是基于AOP的-->
+	<!--spring-mvc的约束：当要使用springmvc中的注解时，要使用这个约束。同时还要使用spring-beans、spring-context的约束，因为要配置扫描包。-->
+	<!--使用p命名空间注入时，需要使用上面的xmlns:p对应的内容，它没有专门的spring对应的xsd约束-->
+	<!--使用c命名空间注入时，需要使用上面的xmlns:c对应的内容，它没有专门的spring对应的xsd约束-->
